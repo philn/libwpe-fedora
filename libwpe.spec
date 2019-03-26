@@ -1,6 +1,6 @@
 Name:           libwpe
-Version:        1.0.0
-Release:        2%{?dist}
+Version:        1.2.0
+Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 
 License:        BSD
@@ -45,15 +45,18 @@ popd
 %files
 %license COPYING
 %doc NEWS
-%{_libdir}/libwpe-0.2.so.1.*
-%{_libdir}/libwpe-0.2.so.1
+%{_libdir}/libwpe-1.0.so.1.*
+%{_libdir}/libwpe-1.0.so.1
 
 %files devel
-%{_includedir}/wpe-0.2/
-%{_libdir}/libwpe-0.2.so
-%{_libdir}/pkgconfig/wpe-0.2.pc
+%{_includedir}/wpe-1.0/
+%{_libdir}/libwpe-1.0.so
+%{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Mon Mar 25 2019 Chris King <bunnyapocalypse@protonmail.org> - 1.2.0-1
+- New vsn with soname bump
+
 * Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
