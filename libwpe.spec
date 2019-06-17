@@ -1,5 +1,5 @@
 Name:           libwpe
-Version:        1.3.0
+Version:        1.3.1
 Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 
@@ -54,6 +54,9 @@ popd
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Mon Jun 17 2019 Chris King <bunnyapocalypse@protonmail.org> - 1.3.1-1
+- New version
+
 * Wed May 8 2019 Chris King <bunnyapocalypse@protonmail.org> - 1.3.0-1
 - New version
 
