@@ -1,8 +1,7 @@
 Name:           libwpe
-Version:        1.3.1
-Release:        2%{?dist}
+Version:        1.4.0
+Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
-
 License:        BSD
 URL:            https://github.com/WebPlatformForEmbedded/%{name}
 Source0:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
@@ -54,6 +53,9 @@ popd
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Wed Sep 18 2019 Chris King <bunnyapocalypse@protonmail.org> - 1.4.0-1
+- New version
+
 * Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.3.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
