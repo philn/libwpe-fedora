@@ -1,14 +1,14 @@
 Name:           libwpe
-Version:        1.6.0
-Release:        2%{?dist}
+Version:        1.7.1
+Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 License:        BSD
 URL:            https://github.com/WebPlatformForEmbedded/%{name}
 Source0:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
 
-BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  mesa-libEGL-devel
+BuildRequires:  meson
 BuildRequires:  libxkbcommon-devel
 
 Provides: wpebackend = %{version}-%{release}
@@ -29,17 +29,11 @@ files for developing applications that use %{name}.
 %autosetup -p1 -n libwpe-%{version}
 
 %build
-mkdir -p %{_target_platform}
-pushd %{_target_platform}
-%cmake \
-  -DCMAKE_BUILD_TYPE=Release \
-  ..
-popd
-
-%make_build -C %{_target_platform}
+%meson
+%meson_build
 
 %install
-%make_install -C %{_target_platform}
+%meson_install
 
 %files
 %license COPYING
@@ -53,6 +47,9 @@ popd
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Wed Jul 29 2020 Michael Catanzaro <mcatanzaro@redhat.com> - 1.7.1-1
+- Update to 1.7.1 and switch to meson build system
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
