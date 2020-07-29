@@ -7,9 +7,9 @@ URL:            https://github.com/WebPlatformForEmbedded/%{name}
 Source0:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gcc-c++
-BuildRequires:  mesa-libEGL-devel
 BuildRequires:  meson
-BuildRequires:  libxkbcommon-devel
+BuildRequires:  pkgconfig(egl)
+BuildRequires:  pkgconfig(xkbcommon)
 
 Provides: wpebackend = %{version}-%{release}
 Obsoletes: wpebackend < 0.2.0-2
