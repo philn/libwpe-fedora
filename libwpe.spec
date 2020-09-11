@@ -1,5 +1,5 @@
 Name:           libwpe
-Version:        1.7.1
+Version:        1.8.0
 Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 License:        BSD
@@ -47,6 +47,9 @@ files for developing applications that use %{name}.
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Fri Sep 11 2020 Michael Catanzaro <mcatanzaro@redhat.com> - 1.8.0-1
+- Update to 1.8.0
+
 * Wed Jul 29 2020 Michael Catanzaro <mcatanzaro@redhat.com> - 1.7.1-1
 - Update to 1.7.1 and switch to meson build system
 
