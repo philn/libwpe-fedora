@@ -1,12 +1,18 @@
 Name:           libwpe
 Version:        1.10.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 License:        BSD
 URL:            https://github.com/WebPlatformForEmbedded/%{name}
 Source0:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
+Source1:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz.asc
+# Created from https://keys.openpgp.org/vks/v1/by-fingerprint/5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
+# $ gpg --import 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.asc
+# $ gpg2 --export --export-options export-minimal 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B > gpgkey-5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.gpg
+Source2:        gpgkey-5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.gpg
 
 BuildRequires:  gcc-c++
+BuildRequires:  gnupg2
 BuildRequires:  meson
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(xkbcommon)
@@ -26,6 +32,7 @@ The %{name}-devel package contains libraries, build data, and header
 files for developing applications that use %{name}.
 
 %prep
+%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %autosetup -p1 -n libwpe-%{version}
 
 %build
@@ -47,6 +54,9 @@ files for developing applications that use %{name}.
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Fri Mar 26 2021 Michael Catanzaro <mcatanzaro@redhat.com> - 1.10.0-2
+- Add GPG verification of source tarball
+
 * Fri Mar 26 2021 Michael Catanzaro <mcatanzaro@redhat.com> - 1.10.0-1
 - Update to 1.10.0
 
