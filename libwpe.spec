@@ -17,9 +17,6 @@ BuildRequires:  meson
 BuildRequires:  pkgconfig(egl)
 BuildRequires:  pkgconfig(xkbcommon)
 
-Provides: wpebackend = %{version}-%{release}
-Obsoletes: wpebackend < 0.2.0-2
-
 %description
 General-purpose library developed for the WPE-flavored port of WebKit
 
