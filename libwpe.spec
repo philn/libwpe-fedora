@@ -1,6 +1,6 @@
 Name:           libwpe
-Version:        1.10.0
-Release:        2%{?dist}
+Version:        1.10.1
+Release:        1%{?dist}
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 License:        BSD
 URL:            https://github.com/WebPlatformForEmbedded/%{name}
@@ -54,6 +54,9 @@ files for developing applications that use %{name}.
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
+* Thu Jun 10 2021 Michael Catanzaro <mcatanzaro@redhat.com> - 1.10.1-1
+- Update to 1.10.1
+
 * Fri Mar 26 2021 Michael Catanzaro <mcatanzaro@redhat.com> - 1.10.0-2
 - Add GPG verification of source tarball
 
