@@ -51,4 +51,4 @@ files for developing applications that use %{name}.
 %{_libdir}/pkgconfig/wpe-1.0.pc
 
 %changelog
-
+%autochangelog
