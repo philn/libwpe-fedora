@@ -1,15 +1,10 @@
 Name:           libwpe
-Version:        1.15.2
+Version:        1.16.0
 Release:        %autorelease
 Summary:        General-purpose library for the WPE-flavored port of WebKit
 License:        BSD
 URL:            https://github.com/WebPlatformForEmbedded/%{name}
-Source0:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz
-Source1:        https://github.com/WebPlatformForEmbedded/libwpe/releases/download/%{version}/%{name}-%{version}.tar.xz.asc
-# Created from https://keys.openpgp.org/vks/v1/by-fingerprint/5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
-# $ gpg --import 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.asc
-# $ gpg2 --export --export-options export-minimal 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B > gpgkey-5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.gpg
-Source2:        gpgkey-5AA3BC334FD7E3369E7C77B291C559DBE4C9123B.gpg
+Source0:        https://wpewebkit.org/releases/libwpe-%{version}.tar.xz
 
 BuildRequires:  gcc-c++
 BuildRequires:  gnupg2
@@ -29,7 +24,6 @@ The %{name}-devel package contains libraries, build data, and header
 files for developing applications that use %{name}.
 
 %prep
-%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %autosetup -p1 -n libwpe-%{version}
 
 %build
